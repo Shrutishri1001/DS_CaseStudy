@@ -49,23 +49,17 @@ func (n *NameNode) StartProcessing(args *PingArgs, reply *PingReply) error {
 		}
 
 		fmt.Println("Connected to DataNode:", node)
-
 		var mapReply MapReply
-
 		mapArgs := MapArgs{
 			Chunk: chunks[i],
 		}
 
 		err = client.Call("DataNode.ProcessChunk", &mapArgs, &mapReply)
-
 		if err != nil {
 			fmt.Println("RPC Error:", err)
 		}
-
 		results = append(results, mapReply.Counts)
-
 		success++
-
 		client.Close()
 	}
 
