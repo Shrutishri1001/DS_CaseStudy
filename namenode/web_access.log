@@ -1,0 +1,5 @@
+10.0.0.1 GET /product/101 200
+10.0.0.2 GET /product/102 200
+10.0.0.3 GET /product/101 200
+10.0.0.4 GET /product/103 200
+10.0.0.5 GET /product/101 200
